@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,84 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Game1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qe-ZT-ZRH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0qe-ZT-ZRH" secondAttribute="height" multiplier="1:1" id="S2Q-FB-B0Q"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksO-9h-dIy">
+                                <rect key="frame" x="131" y="446" width="113" height="30"/>
+                                <state key="normal" title="Throw the Dice!!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="throwDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fK0-nM-bcV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player A's turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMO-lu-PHv">
+                                <rect key="frame" x="133" y="410" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player A pos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nce-LD-tQF">
+                                <rect key="frame" x="16" y="497" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player B pos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBi-Dy-2qx">
+                                <rect key="frame" x="16" y="526" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the dice value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBa-Rw-ZYa">
+                                <rect key="frame" x="101.5" y="616" width="172" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="zMO-lu-PHv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7l0-Ow-zgv"/>
+                            <constraint firstItem="0qe-ZT-ZRH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AWo-9R-N7d"/>
+                            <constraint firstItem="yBa-Rw-ZYa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DbJ-1V-3Sp"/>
+                            <constraint firstItem="Nce-LD-tQF" firstAttribute="top" secondItem="ksO-9h-dIy" secondAttribute="bottom" constant="21" id="M79-dc-xea"/>
+                            <constraint firstItem="ksO-9h-dIy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OyL-JI-ZUX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0qe-ZT-ZRH" secondAttribute="trailing" id="PWG-Jc-mVN"/>
+                            <constraint firstItem="zMO-lu-PHv" firstAttribute="top" secondItem="0qe-ZT-ZRH" secondAttribute="bottom" constant="15" id="U5s-ch-MWi"/>
+                            <constraint firstItem="0qe-ZT-ZRH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bB0-6G-jBU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Nce-LD-tQF" secondAttribute="trailing" constant="259" id="h3s-XR-Ftr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yBa-Rw-ZYa" secondAttribute="bottom" constant="16" id="h8N-QM-YRX"/>
+                            <constraint firstItem="aBi-Dy-2qx" firstAttribute="top" secondItem="Nce-LD-tQF" secondAttribute="bottom" constant="8" id="hhz-zu-xHE"/>
+                            <constraint firstItem="0qe-ZT-ZRH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j7P-Z3-gHy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="aBi-Dy-2qx" secondAttribute="trailing" constant="260" id="lYE-7u-63T"/>
+                            <constraint firstItem="ksO-9h-dIy" firstAttribute="top" secondItem="zMO-lu-PHv" secondAttribute="bottom" constant="15" id="nbM-vp-0WB"/>
+                            <constraint firstItem="Nce-LD-tQF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ny4-f0-EL4"/>
+                            <constraint firstItem="aBi-Dy-2qx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zwQ-GT-K4g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="aLabel" destination="Nce-LD-tQF" id="AC8-dv-db0"/>
+                        <outlet property="bLabel" destination="aBi-Dy-2qx" id="8Gy-Pb-NuP"/>
+                        <outlet property="boardView" destination="0qe-ZT-ZRH" id="wht-hU-hbb"/>
+                        <outlet property="diceValueLabel" destination="yBa-Rw-ZYa" id="kF6-Ys-ziH"/>
+                        <outlet property="turnLabel" destination="zMO-lu-PHv" id="5lL-4m-uLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
